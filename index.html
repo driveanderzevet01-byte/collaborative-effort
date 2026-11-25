@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Collaborative Efforts</title>
+<style>
+:root{--bg:#0e1117;--card:#161b24;--card2:#1c2230;--text:#e7eaf0;--muted:#98a2b3;--line:#283042;--good:#4fd193;--bad:#ff7a7a;--c1:#6cb6ff;--c2:#7ee0a6;--c3:#f2c36b;--c4:#e48fd0;--c5:#ff9b7a;--c6:#a99bff;--ac:#6cb6ff;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:980px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left)) 90px max(16px,env(safe-area-inset-right))}
+p,li,blockquote{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+p{margin:.6em 0}
+a{color:var(--c1)}
+h1{font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.15;margin:.2em 0 .3em}
+h2{font-size:clamp(1.4rem,3.6vw,1.9rem);line-height:1.25;margin:0 0 .4em}
+h3{font-size:1.1rem;margin:1.4em 0 .4em;color:var(--ac)}
+.top{position:sticky;top:0;z-index:20;background:rgba(14,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+#nav{display:flex;gap:6px;overflow-x:auto;padding:10px max(12px,env(safe-area-inset-left));scrollbar-width:none;max-width:1100px;margin:0 auto}
+#nav::-webkit-scrollbar{display:none}
+#nav a{flex:none;color:var(--muted);text-decoration:none;font-size:.85rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}
+#nav a.on{color:#0e1117;background:var(--text);border-color:var(--text);font-weight:600}
+#bar{height:3px;width:0;background:var(--c1)}
+.hero{padding:44px 0 20px}
+.hero p{color:var(--muted);font-size:1.05rem}
+section{padding:42px 0 6px;border-top:1px solid var(--line)}
+.badge{display:inline-block;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ac);border:1px solid var(--ac);border-radius:999px;padding:2px 12px;margin-bottom:8px}
+.formula{border-left:4px solid var(--ac);background:var(--card);padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0;text-align:left}
+.formula small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-size:.72rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;padding:0;list-style:none}
+.chips li{background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:2px 10px;font-size:.92rem;text-align:left}
+.tips{margin:6px 0;padding-left:1.2em}
+.tips li{margin:.25em 0}
+.example{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0}
+.example blockquote{margin:8px 0;border-left:3px solid var(--ac);padding-left:12px}
+.example .why{color:var(--muted);font-size:.93rem}
+.pair{display:grid;grid-template-columns:1fr;gap:12px;margin:12px 0}
+@media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
+.pair>div{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card)}
+.pair .no{border-color:rgba(255,122,122,.5)}.pair .yes{border-color:rgba(79,209,147,.5)}
+.pair b.lab{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.pair .no b.lab{color:var(--bad)}.pair .yes b.lab{color:var(--good)}
+.pair p{margin:.3em 0;text-align:left}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--card2)}
+.soal{background:var(--card);border:1px solid var(--ac);border-radius:14px;padding:16px;margin:14px 0}
+.soal p{margin:.2em 0 .8em}
+/* model email */
+.mail{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:14px 0}
+.mail .mh{background:var(--card2);padding:10px 16px;border-bottom:1px solid var(--line);font-size:.92rem;text-align:left}
+.mail .mh div{margin:2px 0}.mail .mh span{color:var(--muted);display:inline-block;width:64px}
+.mail .mb{padding:6px 16px 14px}
+.part{position:relative;border-left:4px solid var(--c);padding:4px 0 4px 12px;margin:12px 0}
+.part>.pl{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--c);font-weight:700}
+.part p,.part li{text-align:left;margin:.3em 0}
+.part ol{margin:.3em 0;padding-left:1.4em}
+mark{background:none;color:inherit;border-bottom:2px dashed var(--k);padding:0 1px}
+mark sup{color:var(--k);font-weight:700;font-size:.7rem;margin-left:2px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--muted);margin:8px 0}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;background:var(--c)}
+.legend i.d{border-radius:0;height:3px;width:14px;vertical-align:middle;background:none;border-bottom:2px dashed var(--c)}
+.sig{font-family:Arial,Helvetica,sans-serif;font-size:.95rem;line-height:1.5;text-align:left}
+/* quiz */
+.quiz{margin-top:26px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.qhead h3{margin:0}
+.score{color:var(--muted);font-size:.92rem}
+button.btn{background:var(--card2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font:inherit;font-size:.92rem;cursor:pointer}
+button.btn:hover{border-color:var(--ac)}
+button.primary{background:var(--c1);color:#0e1117;border-color:var(--c1);font-weight:600}
+.q{border-top:1px solid var(--line);padding:16px 0}
+.q:first-of-type{border-top:0}
+.qh{display:flex;gap:8px;align-items:center;font-size:.8rem;color:var(--muted)}
+.qn{font-weight:700;color:var(--text)}
+.qk{border:1px solid var(--line);border-radius:6px;padding:0 8px}
+.qt{margin:.3em 0 .6em;font-weight:600;text-align:left}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;min-height:48px;padding:10px 12px;background:var(--card2);color:var(--text);border:1px solid var(--line);border-radius:10px;font:inherit;font-size:.97rem;line-height:1.45;cursor:pointer}
+.opt b{flex:none;width:24px;height:24px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:.8rem}
+.opt:hover:not(.locked){border-color:var(--ac)}
+.opt.locked{cursor:default}
+.opt.correct,.opt.right,.opt.key{border-color:var(--good);background:rgba(79,209,147,.14)}
+.opt.wrong{border-color:var(--bad);background:rgba(255,122,122,.14)}
+.fb{margin-top:8px;font-size:.93rem;text-align:left;min-height:1px}
+.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}
+.fb span{color:var(--muted)}
+.fstat{position:sticky;bottom:10px;z-index:10;margin:14px 0;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:10px 14px;display:flex;justify-content:space-between;gap:10px;font-size:.92rem}
+.result{background:var(--card2);border:1px solid var(--c1);border-radius:14px;padding:18px;margin:16px 0;text-align:center}
+.result .big{font-size:2.2rem;font-weight:700}
+.result .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.sumtable td:first-child{font-weight:700;white-space:nowrap}
+.check{list-style:none;padding:0;margin:8px 0}
+.check li{padding:4px 0 4px 30px;position:relative;text-align:left}
+.check li:before{content:"";position:absolute;left:4px;top:9px;width:16px;height:16px;border:2px solid var(--ac);border-radius:4px}
+footer{color:var(--muted);font-size:.85rem;padding:30px 0;text-align:center}
+footer a{color:var(--muted)}
+/* signature steps + mock UI */
+.steps{counter-reset:st;list-style:none;padding:0;margin:0}
+.step{display:grid;grid-template-columns:1fr;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0}
+@media(min-width:860px){.step{grid-template-columns:5fr 6fr;align-items:start}}
+.step h4{margin:0 0 4px;font-size:1.05rem;display:flex;gap:10px;align-items:center;text-align:left}
+.step h4:before{counter-increment:st;content:counter(st);flex:none;width:30px;height:30px;border-radius:50%;background:var(--ac);color:#0e1117;display:grid;place-items:center;font-size:.9rem}
+.step p{margin:.3em 0;text-align:left}
+.ui{background:#fff;color:#202124;border:1px solid #dadce0;border-radius:12px;font:14px/1.45 Arial,Helvetica,sans-serif;overflow:hidden;position:relative;text-align:left}
+.ui *{text-align:left}
+.ui .bar{display:flex;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px solid #eceff1;background:#f8fafd}
+.ui .srch{flex:1;background:#e9eef6;border-radius:20px;padding:6px 14px;color:#5f6368;font-size:13px;min-width:0;white-space:nowrap;overflow:hidden}
+.ui .ico{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;flex:none}
+.ui .ico svg{width:22px;height:22px;fill:#444746}
+.ui .logo{font-weight:700;color:#d93025;flex:none}
+.ui .jiu{flex:none;border:1px solid #dadce0;border-radius:16px;padding:2px 8px;font-size:11px;font-weight:700;color:#1a237e}
+.ui .pad{padding:12px 14px}
+.ui.pad{padding:12px 14px}
+.step p,.part p,.part li,.mail p{hyphens:manual;-webkit-hyphens:manual}
+.ui .panel{margin:10px 12px 14px auto;width:min(260px,92%);border:1px solid #dadce0;border-radius:12px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,.15);background:#fff}
+.ui .ph{font-size:15px;margin-bottom:8px}
+.ui .uibtn{display:block;width:100%;text-align:center!important;border:1px solid #747775;border-radius:18px;padding:6px 10px;color:#0b57d0;font-weight:600;background:#fff}
+.ui .muted{color:#5f6368;font-size:12px}
+.ui .tabs{display:flex;flex-wrap:wrap;gap:4px 14px;padding:6px 14px 0;border-bottom:1px solid #e0e0e0;font-size:13px;color:#444746}
+.ui .tabs span{padding:6px 2px}
+.ui .tabs .on{color:#0b57d0;border-bottom:3px solid #0b57d0;font-weight:600}
+.ui .title{font-size:20px;padding:10px 14px 4px;color:#1f1f1f}
+.ui .row{display:grid;grid-template-columns:120px 1fr;gap:10px;padding:10px 14px;border-top:1px solid #eceff1}
+.ui .row b{font-size:13px}
+.ui .sbox{display:grid;grid-template-columns:110px 1fr;border:1px solid #dadce0;border-radius:10px;min-height:110px}
+.ui .sbox .lst{border-right:1px solid #dadce0;padding:8px;font-size:13px}
+.ui .sbox .lst div{padding:3px 6px;border-radius:6px}
+.ui .sbox .lst .sel{background:#d3e3fd}
+.ui .sbox .ed{padding:8px 10px;font-size:13px;line-height:1.5;min-width:0;word-break:break-word}
+.ui .tool{border-top:1px solid #dadce0;margin-top:8px;padding-top:4px;color:#5f6368;font-size:12px}
+.ui .cnew{display:inline-block;margin-top:8px;border:1px solid #dadce0;border-radius:6px;padding:4px 18px;color:#0b57d0}
+.ui .dlg{margin:22px auto;width:min(300px,90%);background:#fff;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.3);padding:16px}
+.ui .inp{border:2px solid #0b57d0;border-radius:4px;padding:6px 8px;margin:8px 0 14px}
+.ui .acts{display:flex;justify-content:flex-end;gap:16px;color:#0b57d0;font-weight:600}
+.ui .shade{background:#9aa0a6;padding:2px 0}
+.ui .dd{display:inline-flex;justify-content:space-between;gap:10px;min-width:160px;border:1px solid #747775;border-radius:4px;padding:3px 8px;font-size:13px}
+.ui .caps{font-size:11px;letter-spacing:.04em;color:#444746;font-weight:700;margin:6px 0 2px}
+.ui .save{display:inline-block;background:#0b57d0;color:#fff;border-radius:18px;padding:6px 16px;font-weight:600}
+.ui .cancel{display:inline-block;border:1px solid #747775;border-radius:18px;padding:5px 16px;color:#0b57d0;margin-left:8px}
+.ui .chg{background:#fff3b0;border-radius:3px}
+.hl{outline:3px solid #ff3b30;outline-offset:3px;border-radius:8px;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{outline-color:rgba(255,59,48,.35)}}
+@media(prefers-reduced-motion:reduce){.hl{animation:none}}
+.pin{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#ff3b30;color:#fff;font:700 11px Arial;margin-left:6px;vertical-align:middle}
+.shot{margin:12px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.shot img{display:block;width:100%;height:auto}
+.shotcap{font-size:.86rem;color:var(--muted);margin-top:6px;text-align:left}
+.copybox{background:#fff;color:#202124;border-radius:12px;padding:14px 16px;margin:10px 0;border:1px solid #dadce0}
+.copyrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.copied{color:var(--good);font-size:.9rem}
+@media(max-width:560px){body{font-size:16px}.hero{padding-top:28px}.quiz{padding:12px}.ui .row{grid-template-columns:1fr}.ui .sbox{grid-template-columns:90px 1fr}}
+</style>
+<style>
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px max(12px,env(safe-area-inset-left));max-width:1100px;margin:0 auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;color:var(--muted);background:none;font:inherit;font-size:.88rem;padding:7px 14px;border-radius:999px;border:1px solid var(--line);cursor:pointer;white-space:nowrap}
+.tabs button.on{color:#0e1117;background:var(--text);border-color:var(--text);font-weight:600}
+.tab{display:none}.tab.on{display:block}
+.flow{display:grid;gap:10px;margin:14px 0}
+@media(min-width:760px){.flow{grid-template-columns:repeat(4,1fr)}}
+.flow>div{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:10px 12px}
+.flow b{display:block;color:var(--c);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+.flow p{margin:.3em 0 0;text-align:left;font-size:.95rem}
+.flow small{display:block;color:var(--muted);font-size:.82rem;margin-top:4px}
+.chk li{text-align:left}
+.cmp td{text-align:left}
+.ex{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:12px 0}
+.ex p{margin:.35em 0;text-align:left}
+.ex .lab{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ac);font-weight:700}
+.nextbtn{margin-top:18px}
+</style>
+</head>
+<body>
+<header class="top"><nav class="tabs" id="tabs"></nav></header>
+<main id="app"></main>
+<script>
+const QUIZ=[
+{t:"Theory",q:"What does a SOLUTION answer?",c:"What will fix the problem?",w:["Who does which job?","What does my country prepare at home?","How many countries signed the agreement in the meeting?"],e:"The solution is the idea or result that fixes the problem."},
+{t:"Theory",q:"What does a COLLABORATIVE EFFORT answer?",c:"What will both countries do together?",w:["What is the problem?","Why is the problem global?","What law will my country pass at home for its own people?"],e:"A collaborative effort is the shared work: what the countries do together and who does what."},
+{t:"Practice",q:"Problem: floods destroy farmers' crops. Which is the SOLUTION?",c:"An early warning system for floods",w:["Country A shares satellite data with Country B","Country B passes a law about village warning officers","Both countries train officers together every month in Jakarta"],e:"The solution is the 'what': a flood warning system. The others are collaborative efforts or follow-up actions."},
+{t:"Practice",q:"Same problem. Which is a COLLABORATIVE EFFORT?",c:"Country A shares satellite data, and Country B builds warning stations.",w:["An early warning system for floods","Floods are a global problem","Our country will hire 200 new warning officers for its own villages next year"],e:"It shows two countries working together, with a job for each one."},
+{t:"Practice",q:"'Our country will build a flood data center in Bandung.' What is this?",c:"A follow-up action",w:["The problem","The solution","A collaborative effort, because a data center helps both countries"],e:"It is something ONE country prepares at home so the shared plan can work: a follow-up action (Homework 6D)."},
+{t:"Theory",q:"Which test shows that an idea is NOT a collaborative effort?",c:"One country can do it alone.",w:["It uses a verb like 'share'.","It mentions two countries.","It explains who does what, and how both sides help each other"],e:"If one country can do it without the partner, it is not collaborative."},
+{t:"Practice",q:"Which sentence shows a clear job distribution?",c:"Indonesia will train farmers, while Colombia will supply seedlings.",w:["Both countries will work hard.","We will cooperate on coffee.","Both countries agree that the coffee problem is very serious and urgent"],e:"Job distribution names each country and its own task: 'A will …, while B will …'."},
+{t:"Practice",q:"Solution: affordable solar panels for villages. What is the best FIRST step to find the collaborative effort?",c:"List what is needed to make it happen",w:["Write the email to the partner","Pass a law about electricity","Choose a new problem that is easier for both countries to solve"],e:"Start from the needs (knowledge, money, tools, people, rules), then match them to each country's strengths."},
+{t:"Practice",q:"Country A has engineers; Country B has cheap factories. Which collaborative effort fits best?",c:"A designs the panels, and B produces them.",w:["A designs and produces the panels.","B buys panels from a third country.","Both countries build their own panels separately at home"],e:"Match each job to each country's strength, so both sides are needed."},
+{t:"Practice",q:"Which verb list is most useful for writing collaborative efforts?",c:"share, exchange, train, fund",w:["think, feel, hope, like","sleep, eat, walk, rest","complain, refuse, ignore, delay the meeting"],e:"Collaborative efforts use action verbs that involve both sides: share, exchange, train, fund, build together, research jointly."}
+];
+</script>
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const L="ABCD";
+let seed=5;const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280};
+{const P=QUIZ.map((_,i)=>i%4);for(let i=P.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[P[i],P[j]]=[P[j],P[i]]}QUIZ.forEach((q,i)=>q.p=P[i]);}
+function mk(q){const o=q.w.slice();o.splice(q.p,0,q.c);return o}
+function renderQuiz(host,list,mode,title){
+ host.innerHTML="";
+ const learn=mode==="learn";let done=0,right=0;
+ const head=document.createElement("div");head.className=learn?"qhead":"fstat";
+ const stat=document.createElement("span");stat.className="score";
+ const reset=document.createElement("button");reset.className="btn";reset.textContent="Retry";
+ reset.onclick=()=>renderQuiz(host,list,mode,title);
+ if(learn){head.innerHTML=`<h3>${title}</h3>`;head.append(stat,reset);host.append(head)}
+ else{head.append(stat,document.createElement("span"));}
+ const box=document.createElement("div");host.append(box);
+ if(!learn)host.append(head);
+ const res=document.createElement("div");
+ const els=[];
+ const upd=()=>{ if(learn)stat.textContent=`Score: ${right}/${list.length}`; else{stat.textContent=`Answered ${done}/${list.length}`;head.lastChild.textContent=`Correct: ${right}`}};
+ list.forEach((q,n)=>{
+  const opts=mk(q),el=document.createElement("div");el.className="q";
+  el.innerHTML=`<div class="qh"><span class="qn">Q${n+1}</span><span class="qk">${q.t}</span></div><p class="qt">${q.q}</p><div class="opts">${opts.map((x,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${x}</span></button>`).join("")}</div><div class="fb" aria-live="polite"></div>`;
+  const btns=[...el.querySelectorAll(".opt")],fb=$(".fb",el);
+  btns.forEach(b=>b.onclick=()=>{
+   if(el.dataset.done)return;el.dataset.done=1;done++;
+   const i=+b.dataset.i,ok=i===q.p;if(ok)right++;
+   btns.forEach(x=>x.classList.add("locked"));
+   if(learn){btns[q.p].classList.add("correct");if(!ok)b.classList.add("wrong");
+    fb.className="fb "+(ok?"ok":"no");fb.innerHTML=`${ok?"✓ Correct.":"✗ Not quite."} <span>${q.e}</span>`}
+   else{b.classList.add(ok?"right":"wrong");fb.className="fb "+(ok?"ok":"no");fb.textContent=ok?"✓ Correct":"✗ Wrong"}
+   upd();
+   if(done===list.length&&!learn)finish();
+  });
+  el._reveal=()=>{btns[q.p].classList.add("key");fb.innerHTML=`${fb.textContent} <span>· Answer ${L[q.p]}.</span>`};
+  box.append(el);els.push(el);
+ });
+ const finish=()=>{
+  const pc=Math.round(right/list.length*100);
+  res.className="result";res.innerHTML=`<div class="big">${right} / ${list.length}</div><div>${pc}% correct</div><div class="row"><button class="btn primary" id="key">Show answer key</button><button class="btn" id="again">Try again</button></div>`;
+  host.append(res);res.scrollIntoView({behavior:"smooth",block:"center"});
+  $("#key",res).onclick=function(){els.forEach(e=>e._reveal());this.disabled=true;this.textContent="Answer key shown"};
+  $("#again",res).onclick=()=>{renderQuiz(host,list,mode,title);host.scrollIntoView({behavior:"smooth"})};
+ };
+ upd();
+}
+
+
+const TABS=[["t1","1 Solution vs. collaborative effort"],["t2","2 How to find it"],["t3","3 Next: follow-up actions"],["t4","4 Practice"]];
+$("#tabs").innerHTML=TABS.map(t=>`<button data-t="${t[0]}">${t[1]}</button>`).join("");
+const nxt=(id,label)=>`<button class="btn primary nextbtn" data-go="${id}">${label} →</button>`;
+let html=`
+<section class="tab" id="t1" style="--ac:var(--c1);border-top:0">
+<div class="hero" style="padding-top:26px"><span class="badge">Global Relations · A1–B1</span><h1>Collaborative Efforts</h1>
+<p>In Homework 6C you chose a <b>solution</b> for your global problem. But a solution is only an idea. Two countries must decide <b>how they will work together</b> to make it real. That is the <b>collaborative effort</b>.</p></div>
+<h3>Three different things</h3>
+<div class="tw"><table class="cmp"><thead><tr><th></th><th>Question it answers</th><th>Example (floods)</th></tr></thead><tbody>
+<tr><td><b>Solution</b></td><td><b>What</b> will fix the problem?</td><td>An early warning system for floods</td></tr>
+<tr><td><b>Collaborative effort</b></td><td>What will <b>both countries do together</b>, and <b>who does what</b>?</td><td>Country A shares satellite data, Country B builds warning stations, and both countries train officers together.</td></tr>
+<tr><td><b>Follow-up action</b> (Homework 6D)</td><td>What will <b>my country</b> prepare <b>at home</b> so the effort can work?</td><td>Country B builds a flood data center and passes a rule that every village has a warning officer.</td></tr></tbody></table></div>
+<h3>The chain</h3>
+<div class="flow">
+<div style="--c:var(--c5)"><b>Problem</b><p>Floods destroy farmers' crops.</p></div>
+<div style="--c:var(--c1)"><b>Solution</b><p>A flood warning system</p><small>the WHAT</small></div>
+<div style="--c:var(--c2)"><b>Collaborative effort</b><p>Share data, build stations, train officers</p><small>the HOW, together</small></div>
+<div style="--c:var(--c3)"><b>Follow-up action</b><p>Data center, village rule</p><small>at home, one country</small></div></div>
+<h3>Quick test</h3>
+<ul class="tips chk"><li>Is it a <b>noun idea</b> (a system, a program, a technology)? → probably the <b>solution</b>.</li><li>Does it need <b>both countries</b>, with a <b>job for each</b>? → <b>collaborative effort</b>.</li><li>Can <b>one country do it alone</b>, at home? → <b>follow-up action</b>, not a collaborative effort.</li></ul>
+${nxt("t2","Next: how to find it")}
+</section>
+
+<section class="tab" id="t2" style="--ac:var(--c2);border-top:0">
+<h2 style="margin-top:26px">How to Find the Collaborative Effort</h2>
+<p>Start from your solution and follow these 5 steps.</p>
+<ol class="tips chk">
+<li><b>Write the solution in one short sentence.</b> <i>Affordable solar panels for villages.</i></li>
+<li><b>List what is needed</b> to make it happen: knowledge, money, tools, people, rules.</li>
+<li><b>Look at what each country has</b> (its strengths) and what it is missing.</li>
+<li><b>Turn the needs into shared actions</b> with action verbs: <i>share, exchange, train, fund, build, research together</i>.</li>
+<li><b>Give each country a job:</b> <i>Country A will …, while Country B will …</i> Then check: does the plan need both countries?</li></ol>
+<div class="ex"><span class="lab">Worked example</span>
+<p><b>Problem:</b> Many villages have no electricity.</p>
+<p><b>1. Solution:</b> Affordable solar panels for villages.</p>
+<p><b>2. Needs:</b> a panel design, factories, money, trained technicians.</p>
+<p><b>3. Strengths:</b> Country A has engineers and research money. Country B has cheap factories and many villages.</p>
+<p><b>4. Shared actions:</b> design the panels, produce them, fund them, train technicians.</p>
+<p><b>5. Collaborative effort:</b> Country A will design the panels and fund the first 1,000 units, while Country B will produce them in its factories. Both countries will train village technicians together.</p></div>
+<h3>Weak vs. better</h3>
+<div class="pair"><div class="no"><b class="lab">✗ Weak</b><p>Both countries will cooperate on solar energy.</p></div><div class="yes"><b class="lab">✓ Better</b><p>Country A will design the panels, while Country B will produce them.</p></div></div>
+<div class="pair"><div class="no"><b class="lab">✗ Not collaborative</b><p>Country B will buy solar panels for its villages.</p></div><div class="yes"><b class="lab">✓ Collaborative</b><p>Both countries will share research and train technicians together.</p></div></div>
+<p class="note" style="color:var(--muted)">Tip: list the jobs with the same verb form (parallelism): <i>design, produce, and fund</i>.</p>
+${nxt("t3","Next: follow-up actions")}
+</section>
+
+<section class="tab" id="t3" style="--ac:var(--c3);border-top:0">
+<h2 style="margin-top:26px">Next Step: Follow-up Actions (Homework 6D)</h2>
+<p>Once you know the collaborative effort, think as <b>one country</b>: what <b>infrastructure</b> (buildings, tools, systems) or <b>regulation</b> (rules, laws, programs) must your country create at home so the shared plan can really happen?</p>
+<div class="ex"><span class="lab">From effort to follow-up actions (solar example, Country B)</span>
+<p><b>Collaborative effort:</b> A designs the panels, B produces them, and both train technicians.</p>
+<p><b>Follow-up actions:</b></p>
+<ul class="tips chk"><li><b>Infrastructure:</b> upgrade two factories for solar panel production.</li><li><b>Regulation:</b> lower taxes on solar parts imported from Country A.</li><li><b>Program:</b> open a free technician course in every province.</li></ul></div>
+<h3>Answer the homework questions</h3>
+<div class="tw"><table class="cmp"><thead><tr><th>Question</th><th>Useful language</th><th>Example</th></tr></thead><tbody>
+<tr><td>a. What actions can the country take? (min. 3)</td><td>Our country will …, …, and …</td><td>Our country will upgrade two factories, lower taxes on solar parts, and open technician courses.</td></tr>
+<tr><td>b. Why can those actions support the collaborative efforts?</td><td>This helps … because … / so that …</td><td>Upgraded factories let us produce the panels that Country A designs.</td></tr>
+<tr><td>c. What is needed to execute them?</td><td>To do this, our country needs …, …, and …</td><td>To do this, our country needs funding, trained workers, and support from local governments.</td></tr></tbody></table></div>
+<p class="note" style="color:var(--muted)">Check: every follow-up action should connect to one part of the collaborative effort.</p>
+${nxt("t4","Next: practice")}
+</section>
+
+<section class="tab" id="t4" style="--ac:var(--c4);border-top:0">
+<h2 style="margin-top:26px">Practice</h2>
+<p>10 questions. Answer each one to see the explanation.</p>
+<div class="quiz" id="q1"></div>
+</section>
+<footer>Global Relations · Collaborative efforts</footer>`;
+$("#app").innerHTML=html;
+renderQuiz($("#q1"),QUIZ,"learn","Quiz: Solution, collaborative effort, or follow-up?");
+function go(id){document.querySelectorAll(".tab").forEach(s=>s.classList.toggle("on",s.id===id));document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===id));window.scrollTo(0,0);}
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>go(b.dataset.t));
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
+go("t1");
+</script>
+</body>
+</html>
